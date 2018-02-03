@@ -63,7 +63,9 @@ no cluster management, doesn't support (easy) fallback: might be uncommitted dat
 
 **Patroni** tool for replication and failover and cluster management.
 https://github.com/zalando/patroni
+
 **repmgr** cluster replication manager (https://repmgr.org/)
+
 **PAF** pacemaker based, manages virtual ip
 
 ### Database logical
