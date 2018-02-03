@@ -156,6 +156,8 @@ Kibana Dev tools is a nice way to execute queries
 
 Java garbage collector may corrupt data. WTF?
 
+### What's new in ES?
+
 ES 5.6 has upgrade assistant, bootstrap checks and more.
 
 5 can be upgraded to 6 with rolling upgrade, no need to bring down entire cluster.
@@ -164,5 +166,13 @@ Floodstage to check for available resources. If floodstage watermark is reached
 index is locked and you need to manually unlock it to allow writes.
 
 Sequence numbers will be **always** incremented even if no changes applied.
+Transaction track avoids excessive unneeded move of data in case of networking issues.
+Cross datacenter replication. Types are going away. In 8.0 no more types.
+In 6.0 there will be only 1 type. New reindex api to copy data to another index.
 
+Adapting queue sizing that can guarantee operation time and SLA.
+Pick best shard with exponentially weighted moving average.
 
+Shards shrinking. You can predefine split factor for future splits.
+
+**Rally** - a benchmarking tool.
