@@ -56,6 +56,7 @@ Synchronous mode (replication):
         - simple
         - firsthttps://repmgr.org/
         - quorum
+
 **Streaming replication**: very easy to set up, hard to get wrong, it's working,
 built in, use a user with `REPLICATION` privilege, `-X stream` with postgres 10 is default, different OSes and platforms are not supported,
 replicates everything, can replicate in one direction,
@@ -83,6 +84,7 @@ Extension: **pglogical** has more capabilities today, was partly integrated in P
 ### App in database
 Easy to break, not easy to work with. Slony, Bucardo, Longdiste.
 Multimaster is tricky. Completely transparent multimaster doesn't exist.
+
 **BDR** a fork of Postgres that provides multimaster.
 
 Application controlled replication makes app very complex.
@@ -98,12 +100,12 @@ Read query offloading is for query replication.
 Data distribution is for logical one.
 
 QA:
-- How much latency is added for sync replication?
+- How much latency is added for sync replication?  
 Depends on hardware and network.
 
-- Can you create separate indexes on read replicas?
+- Can you create separate indexes on read replicas?  
 With binary replication NO.
 
-- Pgpool for replication?
+- Pgpool for replication?  
 Don't use it. May be used for balancing.
 
