@@ -1,7 +1,7 @@
 # Contents
-1.[Saturday](saturday)
-    - [Monitoring legacy Java applications with Prometheus](monitoring-legacy-java-applications-with-prometheus)
-    - [PostgreSQL replication in 2018](postgresql-replication-in-2018)
+* [Saturday](saturday)
+    1. [Monitoring legacy Java applications with Prometheus](#monitoring-legacy-java-applications-with-prometheus)
+    1. [PostgreSQL replication in 2018](#postgresql-replication-in-2018)
 
 # Saturday
 
@@ -12,19 +12,21 @@ tool: https://github.com/google/mtail
 grok\_exporter turns logs into metrics
 prometheus labels to parse logs
 turns logs into metrics
+
 ### Blackbox exporter
+
 blackbox exporter calls url and parses response with modules, like http 200
 should cover all possible endpoints
+
 ### JMX
 java visualvm is a JDK tool to connect to JMX
 prometheus has parser for jmx xml shit
 jmx exporter
 polling jmx data may cause significant performance penalty
 ### DIY java agent
-hooks into classes and collects metrics
+
+Hooks into classes and collects metrics
 promagent.jar java exporter
-Q&A:
-- 
 
 
 ## PostgreSQL Replication in 2018
@@ -67,11 +69,12 @@ https://github.com/zalando/patroni
 ### Database logical
 wal\_level='logical'  
 Reconstruct changes on a raw basis. Table level or other partial replication. Might work most of the times but not **all** the time. Foreign keys may be an issue.
+
 Drawbacks:
-    - no schema replication
-    - doesn't replicate sequences
-    - not good for HA replication
-    - not complete
+  - no schema replication
+  - doesn't replicate sequences
+  - not good for HA replication
+  - not complete
 
 Extension: **pglogical** has more capabilities today, was partly integrated in Postgres 10. Does support sequence replication, column and raw based filtering.
 
