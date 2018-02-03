@@ -2,6 +2,8 @@
 * [Saturday](saturday)
     1. [Monitoring legacy Java applications with Prometheus](#monitoring-legacy-java-applications-with-prometheus)
     1. [PostgreSQL replication in 2018](#postgresql-replication-in-2018)
+    1. [PostgreSQL and Kubernetes](#postgresql-and-kubernetes)
+    1. [Elasticsearch Revolution](#elastcisearch-revolution)
 
 # Saturday
 
@@ -108,4 +110,59 @@ With binary replication NO.
 
 - Pgpool for replication?  
 Don't use it. May be used for balancing.
+
+
+## PostgreSQL and Kubernetes
+
+Talk by Zalando.
+
+>300 databases in datacenter. Hundreds of databases are transitioned to k8s.
+Question: Why not use serverless Aurora?
+
+Run standby server with replication delay. 9.6 version is used in production.
+
+**pg\_mon** is used for monitoring. **pgview** to show data.
+
+Grafana + KairosDB to store metrics.
+
+StatefulSets from k8s allow to couple volume and pod.
+2 pods: 1 master and 1 replica. If container0, then `pg_init` runs, else `pg_basebackup`.
+
+Helm is easier to use. Abstracts some schdeuler complexity away from user.
+
+Etcd is used for quorum of postgres cluster. Who should be promoted.
+Patroni was intefrated in k8s.
+
+**Spilo** packages Patroni and all dependencies.
+
+**Postgres operator** is used to manage postgres in k8s.
+
+OAUTH2PAM auth for postgres developed by them.
+
+Operator dynamically changes EBS disk sizes with resize2fs.
+
+
+## Elasticsearch Revolution
+
+Components:
+  - Cluster
+  - Node
+  - Index
+  - Shard
+  - Document
+  - ID
+
+Kibana Dev tools is a nice way to execute queries
+
+Java garbage collector may corrupt data. WTF?
+
+ES 5.6 has upgrade assistant, bootstrap checks and more.
+
+5 can be upgraded to 6 with rolling upgrade, no need to bring down entire cluster.
+
+Floodstage to check for available resources. If floodstage watermark is reached
+index is locked and you need to manually unlock it to allow writes.
+
+Sequence numbers will be **always** incremented even if no changes applied.
+
 
