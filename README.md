@@ -200,6 +200,9 @@ Whenever PR is merged documentation is created immediately.
 
 Tool called **stylelint** to create HTML styles for documentation. https://github.com/stylelint/stylelint
 
-Library documentationJS for JavaScript documentation.
+Library **documentationJS** for JavaScript documentation. http://documentation.js.org/
 
 Available offline, static, prerendered, JS to do processing.
+Entry level should be low. Jamstack is a great approach.
+
+https://fabric-design.github.io/styleguide
