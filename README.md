@@ -1,9 +1,11 @@
 # Contents
-* [Saturday](saturday)
+* [Saturday](#saturday)
     1. [Monitoring legacy Java applications with Prometheus](#monitoring-legacy-java-applications-with-prometheus)
     1. [PostgreSQL replication in 2018](#postgresql-replication-in-2018)
     1. [PostgreSQL and Kubernetes](#postgresql-and-kubernetes)
-    1. [Elasticsearch Revolution](#elastcisearch-revolution)
+    1. [Elasticsearch Revolution](#elasticsearch-revolution)
+* [Sunday](#sunday)
+    1. [Documentation as source code](#documentation-as-source-code)
 
 # Saturday
 
@@ -176,3 +178,28 @@ Pick best shard with exponentially weighted moving average.
 Shards shrinking. You can predefine split factor for future splits.
 
 **Rally** - a benchmarking tool.
+
+
+# Sunday
+
+## Documentation as source code
+
+Author: Ferit Topcu
+
+Why a style guide? - Because of variety
+
+Don't repeat yourself DRY. Move fast
+
+Documetation should be easy to maintain, easy to customize.
+
+Zalando uses Github Enterprise.
+
+Markdown to write documentation.
+
+Whenever PR is merged documentation is created immediately.
+
+Tool called **stylelint** to create HTML styles for documentation. https://github.com/stylelint/stylelint
+
+Library documentationJS for JavaScript documentation.
+
+Available offline, static, prerendered, JS to do processing.
