@@ -6,6 +6,7 @@
     1. [Elasticsearch Revolution](#elasticsearch-revolution)
 * [Sunday](#sunday)
     1. [Documentation as source code](#documentation-as-source-code)
+    1. [Provisioning vs Configuration Management Deployment vs Orchestration](#Provisioning-vs-Configuration-Management-Deployment-vs-Orchestration)
 
 # Saturday
 
@@ -206,3 +207,27 @@ Available offline, static, prerendered, JS to do processing.
 Entry level should be low. Jamstack is a great approach.
 
 https://fabric-design.github.io/styleguide
+
+
+## Provisioning vs Configuration Management Deployment vs Orchestration
+
+Author: https://github.com/petems, guy from Puppetlabs
+
+Infrastructure as code, **fog** a ruby tool to provision AWS infra.
+
+**tugboat** a cli for DigitalOcean. https://github.com/petems/tugboat
+
+Golden image considerations, vedor specific image formats.
+
+**Deployer** a php type of capistrano.
+
+Sometimes config management is a deployment tool.
+
+**Bolt** a command executor for Puppet. You can define configuration as yaml and execute puppet modules with it.
+Bolt is a more easier mcollective. Probably a replacement.
+
+There's is place for config management in container world.
+
+Building docker images with puppet is not a good idea in a long term.
+
+
