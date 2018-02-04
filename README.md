@@ -9,6 +9,8 @@
     1. [Provisioning vs Configuration Management Deployment vs Orchestration](#Provisioning-vs-Configuration-Management-Deployment-vs-Orchestration)
     1. [Kubernetes load balancing for virtual machines](#kubernetes-load-balancing-for-virtual-machines)
     1. [MySQL InnoDB Cluster](#mysql-innodb-cluster)
+    1. [Containerd](#containerd)
+    1. [Kubernetes Security Practices](#kubernetes-security-practices)
 
 # Saturday
 
@@ -255,5 +257,43 @@ Document and relational models support. **AdminAPI** is inteagrated in Shell and
 cluster orchestration.
 
 Mysql 8 has lots of changes, like restart command.
+
+
+## Containerd
+
+2016 v0.0.1 -> 2017 v1.0.0
+
+Can be used beyond Docker. Runs on top of runc.
+
+`ctr` command line interface for containerd.
+
+**Snaphotter** part of containerd that manages snapshots.
+
+Kubernetes has cri-containerd.
+
+No requirements for docker engine to be for running.
+
+Q: Can containerd build images?
+
+
+## Kubernetes security practices
+
+Clusterrolebinding ?
+
+Restrict access to API servers with firewall
+
+Use Network Policies.
+
+seccomp, apparmor, selinux prevent break out of container.
+`unshare` command to change namespaces.
+
+Restrict kubelet permissions: RBAC, rotate kubelet certificates.
+
+**istio** is a service mesh on top of k8s, proxies data between services,
+end-to-end encryption, policy is managed by central server.
+
+
+
+
 
 
