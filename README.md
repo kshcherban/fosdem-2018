@@ -7,6 +7,8 @@
 * [Sunday](#sunday)
     1. [Documentation as source code](#documentation-as-source-code)
     1. [Provisioning vs Configuration Management Deployment vs Orchestration](#Provisioning-vs-Configuration-Management-Deployment-vs-Orchestration)
+    1. [Kubernetes load balancing for virtual machines](#kubernetes-load-balancing-for-virtual-machines)
+    1. [MySQL InnoDB Cluster](#mysql-innodb-cluster)
 
 # Saturday
 
@@ -189,7 +191,7 @@ Author: Ferit Topcu
 
 Why a style guide? - Because of variety
 
-Don't repeat yourself DRY. Move fast
+Don't repeat yourself DRY. Move fast. PRs without documentation are rejected.
 
 Documetation should be easy to maintain, easy to customize.
 
@@ -229,5 +231,29 @@ Bolt is a more easier mcollective. Probably a replacement.
 There's is place for config management in container world.
 
 Building docker images with puppet is not a good idea in a long term.
+
+
+## Kubernetes load balancing for virtual machines
+
+**KubeVirt** to control VMs with k8s. oVirt is a base for it.
+
+**Dscheduler**  reschedules containers to rebalance the cluster. Finds the pods that can be evicted.
+Minimal disturbance on the cluster.
+
+Load balancer to find better placement on nodes.
+
+
+## MySQL InnoDB Cluster
+
+Group replication for MySQL that allows udates anywhere - master-master,
+virtually synchronous replication, automatic failover.
+
+Router sits on top of cluster.
+
+**MySQL Shell** is a new multi-language interface. Can be used to perform data queries.
+Document and relational models support. **AdminAPI** is inteagrated in Shell and allows
+cluster orchestration.
+
+Mysql 8 has lots of changes, like restart command.
 
 
