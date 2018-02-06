@@ -11,6 +11,7 @@
     1. [MySQL InnoDB Cluster](#mysql-innodb-cluster)
     1. [Containerd](#containerd)
     1. [Kubernetes Security Practices](#kubernetes-security-practices)
+    1. [Container security practices](#container-security-practices)
 
 # Saturday
 
@@ -293,7 +294,17 @@ Restrict kubelet permissions: RBAC, rotate kubelet certificates.
 end-to-end encryption, policy is managed by central server.
 
 
+## Container security practices
 
+`DOCKER_CONTENT_TRUST=1` to enable image verification
 
+`docker trust` experimental command to verify image, set certificates, etc.
 
+Seccomp restricst system calls based on policy.
+
+docker bench security to audit security in containers
+
+lynis is a tool to audit dockerfiles.
+
+Use capabilities to controll
 
